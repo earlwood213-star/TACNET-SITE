@@ -4,98 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TACNET Life-Safety | Next-Gen School Threat Response</title>
+    <!-- Google Fonts & Tailwind CSS for modern design -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.95)), 
+                              url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.05); }
+        }
+        .animate-pulse-red {
+            animation: pulse-red 1.2s infinite ease-in-out;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-red-600 selection:text-white">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
 
-    <header class="relative overflow-hidden border-b border-slate-800 bg-slate-900/50 py-20 px-6 lg:px-12">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-red-600/10 text-red-500 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 border border-red-500/20 uppercase tracking-widest">
-                Nationwide School Safety Initiative
+    <!-- HERO SECTION WITH BLUE GLASSY THEME & BACKGROUND -->
+    <header class="relative overflow-hidden border-b border-blue-900/40 hero-bg py-24 px-6 lg:px-12">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-blue-600/20 text-blue-400 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 border border-blue-500/30 uppercase tracking-widest shadow-lg shadow-blue-600/20">
+                Created by Retired Deputy Sheriff Earl Wood • Extensive Public Safety Experience
             </span>
             <h1 class="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-                The Lifesaving Standard Schools <span class="text-red-600">Can't Ignore.</span>
+                The Lifesaving Standard Schools <span class="text-blue-500">Can't Ignore.</span>
             </h1>
-            <p class="text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                Every second counts when a threat crosses a school threshold. TACNET unifies administrators, teachers, classrooms, and responding law enforcement into a single, instantaneous defense network.
+            <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Every second counts when a threat crosses a school threshold. TACNET unifies administrators, teachers, classrooms, and responding law enforcement into a single, instantaneous defense network built from decades of frontline law enforcement expertise by Retired Deputy Sheriff Earl Wood.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#pricing" class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-red-600/30 transition-all text-center">
-                    Request District Pricing
+                <a href="#pricing" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/30 transition-all text-center border border-blue-400/30">
+                    View Per-School Pricing
                 </a>
-                <a href="#features" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-xl border border-slate-700 transition-all text-center">
-                    Explore Features
+                <a href="#live-demos" class="glass-panel hover:bg-slate-800/80 text-slate-200 font-semibold px-8 py-4 rounded-xl transition-all text-center">
+                    View Live Tactical Demos
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="features" class="py-20 px-6 lg:px-12 max-w-6xl mx-auto">
+    <!-- BACKDROP VISUAL GRID SECTION (Bus, High School, LE Vehicle) -->
+    <section class="py-16 px-6 lg:px-12 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-2">Integrated Public Safety Ecosystem</h2>
+            <p class="text-slate-400 text-sm">Engineered specifically for schools, campus transport, and first-responder alignment.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- School Photo -->
+            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl group border border-blue-500/20">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" alt="High School Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-blue-950/30"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg text-white mb-1">Campus Protection</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Instant room-level location alerts, door indicator strobes, and automated PA loudspeaker broadcasts.</p>
+                </div>
+            </div>
+            <!-- School Bus Photo -->
+            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl group border border-blue-500/20">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1557223562-6c77ef1ae210?auto=format&fit=crop&w=800&q=80" alt="School Bus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-blue-950/30"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg text-white mb-1">Fleet & Bus Tracking</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Real-time GPS telemetry and route monitoring integrated directly into the command dashboard.</p>
+                </div>
+            </div>
+            <!-- LE Vehicle Photo -->
+            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl group border border-blue-500/20">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Law Enforcement Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-blue-950/30"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg text-white mb-1">First Responder Link</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Direct tactical data feed to responding deputies while en route, eliminating blind deployment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED CLOSE-UP VIEWS (LE Terminal, Bus GPS, Admin & Teacher Screens) -->
+    <section id="live-demos" class="py-16 px-6 lg:px-12 max-w-6xl mx-auto border-t border-blue-900/30">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Unmatched Capabilities</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Built hand-in-hand with law enforcement leadership to eliminate communication gaps entirely.</p>
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Tactical Close-Ups: Real-Time Alert Feeds</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">See exactly what law enforcement, bus dispatch, administrators, and teachers experience the precise millisecond an alert is triggered.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- 1. Law Enforcement Cruiser Computer Close-Up -->
+            <div class="glass-panel p-6 rounded-3xl border border-blue-500/40 relative shadow-2xl">
+                <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse-red uppercase tracking-wider">🚨 ACTIVE RED ALERT</div>
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <span>🚔</span> Law Enforcement Mobile Computer View
+                </h3>
+                <p class="text-slate-400 text-xs mb-4">Responding deputies view live tactical mapping, threat GPS vectors, and floor layout in real-time while en route.</p>
+                <div class="bg-slate-950 border border-red-500/50 rounded-xl p-4 font-mono text-xs text-red-400 space-y-2">
+                    <div class="flex justify-between border-b border-red-900/40 pb-2">
+                        <span class="text-white font-bold">[MDT DISPATCH TERMINAL]</span>
+                        <span class="text-red-500 font-bold animate-pulse">STATUS: CRITICAL</span>
+                    </div>
+                    <div><strong class="text-slate-300">INCIDENT:</strong> Active Threat / Lockdown</div>
+                    <div><strong class="text-slate-300">LOCATION:</strong> West Campus - Level 2, Room 204</div>
+                    <div><strong class="text-slate-300">GPS VECTOR:</strong> 37.4162° N, 79.1824° W (Approaching Unit ETA: 1m 42s)</div>
+                    <div class="bg-red-950/40 border border-red-600/30 p-2 rounded text-red-300 font-bold text-center mt-2">
+                        🔴 WARNING: STROBE BEACON ACTIVE AT ROOM 204 DOOR
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Real-Time School Bus GPS Route & Stop View -->
+            <div class="glass-panel p-6 rounded-3xl border border-blue-500/40 relative shadow-2xl">
+                <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">🚌 LIVE GPS TRACKING</div>
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <span>📍</span> Fleet & School Bus Route Monitor
+                </h3>
+                <p class="text-slate-400 text-xs mb-4">Live GPS coordinate telemetry tracking bus routes, current speed, upcoming stops, and secure status.</p>
+                <div class="bg-slate-950 border border-blue-500/40 rounded-xl p-4 font-mono text-xs text-blue-300 space-y-2">
+                    <div class="flex justify-between border-b border-blue-900/40 pb-2">
+                        <span class="text-white font-bold">[BUS #14 - CENTRAL ROUTE]</span>
+                        <span class="text-green-400">● IN TRANSIT</span>
+                    </div>
+                    <div><strong class="text-slate-300">CURRENT STOP:</strong> Stop #4 (Oakridge & 5th St)</div>
+                    <div><strong class="text-slate-300">NEXT STOP:</strong> High School North Entrance</div>
+                    <div><strong class="text-slate-300">GPS TELEMETRY:</strong> Lat: 37.4120, Lon: -79.1795 (Speed: 32 MPH)</div>
+                    <div class="bg-blue-950/40 border border-blue-600/30 p-2 rounded text-blue-200 text-center mt-2">
+                        ✓ SECURE ROUTE STATUS • DRIVER COMMUNICATIONS ACTIVE
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Administrator Dashboard View -->
+            <div class="glass-panel p-6 rounded-3xl border border-blue-500/40 relative shadow-2xl">
+                <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse-red uppercase tracking-wider">🚨 LOCKDOWN BROADCAST</div>
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <span>🏫</span> Administrator Command Dashboard
+                </h3>
+                <p class="text-slate-400 text-xs mb-4">Principal and admin view showing campus-wide status, PA intercom activation, and emergency personnel coordination.</p>
+                <div class="bg-slate-950 border border-red-500/50 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2">
+                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                        <span class="text-white font-bold">[ADMIN MAIN CONSOLE]</span>
+                        <span class="text-red-500 font-bold">PA BROADCASTING LIVE</span>
+                    </div>
+                    <div><strong class="text-red-400">AUDIO PA:</strong> "Threat in courtyard west side, all lockdown now."</div>
+                    <div><strong class="text-slate-300">CAMPUS DOORS:</strong> 42 Secure | <span class="text-red-500 font-bold">1 Active Strobe (Room 204)</span></div>
+                    <div><strong class="text-slate-300">LE DISPATCH LINK:</strong> Connected & Transmitting Live Feed</div>
+                    <div class="bg-slate-900 border border-slate-700 p-2 rounded text-slate-400 text-center mt-2">
+                        [COMMAND OVERRIDE: CLEAR SCENE & RESET TO GREEN]
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Teacher Mobile App View -->
+            <div class="glass-panel p-6 rounded-3xl border border-blue-500/40 relative shadow-2xl">
+                <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse-red uppercase tracking-wider">🚨 ALERT RECEIVED</div>
+                <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <span>📱</span> Teacher Mobile App Screen
+                </h3>
+                <p class="text-slate-400 text-xs mb-4">Instant push notification on teacher phones displaying immediate lockdown instructions and classroom security status.</p>
+                <div class="bg-slate-950 border border-red-500/50 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2">
+                    <div class="flex justify-between border-b border-red-900/40 pb-2">
+                        <span class="text-white font-bold">[TACNET MOBILE CLIENT]</span>
+                        <span class="text-red-500 font-bold animate-pulse">ALARM ACTIVE</span>
+                    </div>
+                    <div class="bg-red-950/60 p-2 rounded text-red-200 font-bold">
+                        ⚠️ EMERGENCY LOCKDOWN: Secure classroom door immediately. Law enforcement en route.
+                    </div>
+                    <div><strong class="text-slate-300">YOUR ROOM STATUS:</strong> <span class="text-red-500 font-bold">DOOR BEACON FLASHING RED</span></div>
+                    <div class="bg-slate-900 border border-slate-700 p-2 rounded text-center text-slate-300 mt-2">
+                        [MARK CLASSROOM SECURE / ROLL CALL CHECK]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES GRID SECTION -->
+    <section id="features" class="py-16 px-6 lg:px-12 max-w-6xl mx-auto border-t border-blue-900/30">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Unmatched Tactical Capabilities</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">Built from decades of law enforcement insight to eliminate communication gaps entirely.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl relative group hover:border-red-600/50 transition-all">
-                <div class="w-12 h-12 bg-red-600/10 rounded-xl flex items-center justify-center text-red-500 font-bold text-xl mb-6 border border-red-500/20">⚡</div>
+            <!-- Feature 1 -->
+            <div class="glass-panel p-8 rounded-2xl relative group hover:border-blue-500 transition-all">
+                <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 font-bold text-xl mb-6 border border-blue-500/30">⚡</div>
                 <h3 class="text-xl font-bold text-white mb-3">Instant Multi-Agency Blast</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">One touch simultaneously alerts every teacher, staff member, and responding deputy within fractions of a second.</p>
             </div>
-            <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl relative group hover:border-red-600/50 transition-all">
-                <div class="w-12 h-12 bg-red-600/10 rounded-xl flex items-center justify-center text-red-500 font-bold text-xl mb-6 border border-red-500/20">📢</div>
+            <!-- Feature 2 -->
+            <div class="glass-panel p-8 rounded-2xl relative group hover:border-blue-500 transition-all">
+                <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 font-bold text-xl mb-6 border border-blue-500/30">📢</div>
                 <h3 class="text-xl font-bold text-white mb-3">Automated Intercom Broadcast</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">Dynamic threat details stream automatically over school PA loudspeakers so everyone is informed immediately, phone or no phone.</p>
             </div>
-            <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl relative group hover:border-red-600/50 transition-all">
-                <div class="w-12 h-12 bg-red-600/10 rounded-xl flex items-center justify-center text-red-500 font-bold text-xl mb-6 border border-red-500/20">🎯</div>
+            <!-- Feature 3 -->
+            <div class="glass-panel p-8 rounded-2xl relative group hover:border-blue-500 transition-all">
+                <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 font-bold text-xl mb-6 border border-blue-500/30">🎯</div>
                 <h3 class="text-xl font-bold text-white mb-3">Visual Room Strobes</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">High-intensity indicators flash red at the precise threat location (e.g., Classroom 204) and turn green upon secure clearance.</p>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-20 px-6 lg:px-12 bg-slate-900/30 border-t border-slate-800">
+    <!-- PRICING SECTION (CORRECTED PER-SCHOOL PRICING) -->
+    <section id="pricing" class="py-20 px-6 lg:px-12 bg-slate-900/50 border-t border-blue-900/30">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">District Licensing Tiers</h2>
-                <p class="text-slate-400">Direct-to-district deployment with zero state bureaucracy red tape.</p>
+                <span class="text-blue-400 font-semibold text-sm uppercase tracking-widest block mb-2">Transparent Licensing</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Per-School Investment Pricing</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Priced individually per school campus so districts of any size can deploy immediately with zero state bureaucracy red tape.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between">
+                <!-- Single School License -->
+                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-blue-500/30">
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Single Campus Tier</h3>
-                        <p class="text-slate-400 text-sm mb-6">Ideal for independent high schools & single campuses.</p>
-                        <div class="text-4xl font-black text-white mb-6">$2,500 <span class="text-sm font-normal text-slate-400">/ year</span></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Single School Campus License</h3>
+                        <p class="text-slate-400 text-sm mb-6">Complete life-safety deployment for one individual school facility.</p>
+                        <div class="text-4xl font-black text-white mb-6">$2,500 <span class="text-sm font-normal text-slate-400">/ school / year</span></div>
                         <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center">✓ Full App Access & Panic Button</li>
-                            <li class="flex items-center">✓ Up to 50 Staff User Accounts</li>
-                            <li class="flex items-center">✓ Local Law Enforcement Link</li>
+                            <li class="flex items-center text-blue-400 font-medium">✓ Per-School Flat Rate Structure</li>
+                            <li class="flex items-center">✓ Full App Access & Emergency Panic Button</li>
+                            <li class="flex items-center">✓ Up to 50 Staff User Accounts per Campus</li>
+                            <li class="flex items-center">✓ Local Law Enforcement Portal Linkage</li>
                         </ul>
                     </div>
-                    <a href="mailto:your_email@domain.com?subject=Inquiry:%20Single%20Campus%20Tier" class="block bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all">
-                        Get Started
+                    <a href="mailto:earl@tacnetsolutions.com?subject=Inquiry:%20Single%20School%20License" class="block bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all border border-blue-500/30">
+                        Request Single School Setup
                     </a>
                 </div>
 
-                <div class="bg-slate-900 border-2 border-red-600 rounded-3xl p-8 flex flex-col justify-between relative shadow-xl shadow-red-600/10">
-                    <span class="absolute -top-3 right-6 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                <!-- Multi-School / District Package -->
+                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border-2 border-blue-600 shadow-xl shadow-blue-600/20 relative">
+                    <span class="absolute -top-3 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">District Standard</span>
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Multi-School District</h3>
-                        <p class="text-slate-400 text-sm mb-6">For city or county districts up to 5 campuses.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">Multi-School District Package</h3>
+                        <p class="text-slate-400 text-sm mb-6">Scaled pricing for county or city districts covering multiple campuses.</p>
                         <div class="text-4xl font-black text-white mb-6">$6,500 <span class="text-sm font-normal text-slate-400">/ year</span></div>
+                        <p class="text-xs text-blue-400 font-semibold mb-6">Covers up to 10 School Campuses in your district ($650 per school/year effectively).</p>
                         <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center">✓ Unlimited Staff Accounts</li>
+                            <li class="flex items-center text-blue-400 font-medium">✓ Up to 10 School Campuses Included</li>
+                            <li class="flex items-center">✓ Unlimited District Staff Accounts</li>
                             <li class="flex items-center">✓ Automated PA Intercom Integration</li>
-                            <li class="flex items-center">✓ Live Bus Tracking Module</li>
+                            <li class="flex items-center">✓ Live Bus Tracking & Fleet Module</li>
                         </ul>
                     </div>
-                    <a href="mailto:your_email@domain.com?subject=Inquiry:%20Multi-School%20District" class="block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all">
+                    <a href="mailto:earl@tacnetsolutions.com?subject=Inquiry:%20Multi-School%20District%20Package" class="block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-xl text-center transition-all shadow-lg shadow-blue-600/30">
                         Request District Proposal
                     </a>
                 </div>
@@ -103,8 +273,9 @@
         </div>
     </section>
 
-    <footer class="py-12 px-6 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 TACNET Life-Safety Systems. All Rights Reserved. Designed for Educational & Law Enforcement Protection.</p>
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-blue-900/30 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 TACNET Life-Safety Systems. Created by Retired Deputy Sheriff Earl Wood. All Rights Reserved.</p>
     </footer>
 
 </body>
