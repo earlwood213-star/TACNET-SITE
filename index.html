@@ -3,584 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TACNET SCHOOL - CloudKit Master System</title>
-    <!-- Apple CloudKit JS SDK -->
-    <script src="https://cdn.apple-cloudkit.com/ck/2/cloudkit.js"></script>
+    <title>TACNET Life-Safety | Next-Gen School Threat Response</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --royal-blue: #0b1d3a;
-            --neon-blue: #00f0ff;
-            --glass-bg: rgba(20, 45, 85, 0.45);
-            --gold-border: #ffd700;
-            --emergency-red: #ff3333;
-            --safe-green: #10b981;
-            --text-light: #e0f7ff;
-            --gold-text: #ffd700;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--royal-blue);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 480px;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 2px solid var(--gold-border);
-            box-shadow: 0 0 0 3px var(--royal-blue), 0 0 0 5px var(--gold-border), 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 0 20px rgba(255, 215, 0, 0.15);
-            border-radius: 16px;
-            padding: 24px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        h1 {
-            font-size: 1.3rem;
-            text-align: center;
-            margin-bottom: 4px;
-            color: var(--gold-text);
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .subtitle {
-            font-size: 0.75rem;
-            text-align: center;
-            color: var(--gold-text);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-tabs {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 15px;
-            justify-content: center;
-        }
-
-        .nav-tab {
-            background: rgba(11, 29, 58, 0.8);
-            border: 1px solid var(--gold-border);
-            color: var(--gold-text);
-            font-size: 0.6rem;
-            font-weight: bold;
-            padding: 6px 4px;
-            border-radius: 4px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.2s ease;
-            flex: 1;
-            text-align: center;
-        }
-
-        .nav-tab.active, .nav-tab:hover {
-            background: var(--gold-border);
-            color: var(--royal-blue);
-        }
-
-        .page-content {
-            display: none;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        .badge-row {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            font-size: 0.6rem;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid var(--gold-border);
-            padding: 3px 6px;
-            border-radius: 4px;
-            color: var(--gold-text);
-            text-align: center;
-        }
-
-        .location-box {
-            background: rgba(11, 29, 58, 0.75);
-            border: 1px solid var(--gold-border);
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .panic-section {
-            text-align: center;
-            margin: 20px 0 10px 0;
-        }
-
-        .panic-btn {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #ff6666 0%, var(--emergency-red) 100%);
-            border: 4px solid var(--gold-border);
-            color: white;
-            font-size: 0.9rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 25px rgba(255, 51, 51, 0.6);
-            outline: none;
-            user-select: none;
-        }
-
-        .hold-reminder {
-            font-size: 0.6rem;
-            color: #ffffff;
-            margin-top: 6px;
-            text-transform: uppercase;
-            opacity: 0.85;
-        }
-
-        .bypass-section {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .bypass-btn {
-            width: 100%;
-            background: rgba(16, 185, 129, 0.25);
-            border: 2px solid var(--safe-green);
-            color: #34d399;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 12px 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .module-card {
-            background: rgba(11, 29, 58, 0.6);
-            border: 1px solid var(--gold-border);
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            font-size: 0.8rem;
-        }
-
-        .module-card h3 {
-            font-size: 0.85rem;
-            color: var(--gold-text);
-            margin: 0 0 6px 0;
-            text-transform: uppercase;
-        }
-
-        .action-btn {
-            width: 100%;
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px solid var(--gold-border);
-            color: var(--gold-text);
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 8px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-transform: uppercase;
-            margin-top: 8px;
-        }
-
-        .action-btn:hover {
-            background: rgba(255, 215, 0, 0.35);
-        }
-
-        .qr-section {
-            text-align: center;
-            background: rgba(11, 29, 58, 0.6);
-            border: 1px solid var(--gold-border);
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .qr-title {
-            font-size: 0.7rem;
-            color: var(--gold-text);
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .qr-code {
-            width: 90px;
-            height: 90px;
-            border: 2px solid #ffffff;
-            background: #ffffff;
-            padding: 3px;
-            border-radius: 4px;
-        }
-
-        .status-log {
-            font-size: 0.8rem;
-            background: rgba(0,0,0,0.3);
-            padding: 8px;
-            border-radius: 6px;
-            min-height: 35px;
-            margin-bottom: 12px;
-            border-left: 3px solid var(--gold-border);
-        }
-
-        .disclaimer {
-            font-size: 0.6rem;
-            color: #b0c4de;
-            line-height: 1.3;
-            text-align: justify;
-            border-top: 1px solid rgba(255, 215, 0, 0.3);
-            padding-top: 10px;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body onload="initSystem()">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-red-600 selection:text-white">
 
-    <div class="container">
-        <div class="glass-card">
-            <h1>TACNET SCHOOL</h1>
-            <div class="subtitle">Life saving assisting agent</div>
-            
-            <div class="nav-tabs">
-                <button class="nav-tab active" onclick="switchPage('page1')">1. Console</button>
-                <button class="nav-tab" onclick="switchPage('page2')">2. Map</button>
-                <button class="nav-tab" onclick="switchPage('page3')">3. LE Portal</button>
-                <button class="nav-tab" onclick="switchPage('page4')">4. Active Shooter</button>
-                <button class="nav-tab" onclick="switchPage('page5')">5. Bus Track</button>
-            </div>
-
-            <div class="badge-row">
-                <span class="badge">EARL A. WOOD, RET. DEPUTY</span>
-                <span class="badge">PAT PENDING</span>
-            </div>
-
-            <!-- PAGE 1: EMERGENCY CONSOLE -->
-            <div id="page1" class="page-content active">
-                <div class="location-box">
-                    <strong>Active Node / Assignment:</strong> <span id="consoleActiveAssignment" style="color:var(--gold-text);">Classroom 204 (Level 2)</span><br>
-                    <strong>Status:</strong> <span id="nodeStatusText" style="color:#34d399;">Secure / Standby</span>
-                </div>
-
-                <div class="panic-section">
-                    <button class="panic-btn" 
-                        id="panicBtn"
-                        onmousedown="startHold(event)" 
-                        onmouseup="cancelHold(event)" 
-                        ontouchstart="startHold(event)" 
-                        ontouchend="cancelHold(event)">
-                        EMERGENCY<br>BROADCAST
-                    </button>
-                    <div class="hold-reminder">Hold 3 Seconds</div>
-                </div>
-
-                <div class="bypass-section" style="margin-top: 15px;">
-                    <button class="bypass-btn" onclick="triggerBypass()">ALL OK GOOD SECURE BYPASS</button>
-                </div>
-
-                <div class="qr-section">
-                    <div class="qr-title">Scan to Join Node Network</div>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://github.com/earlwood" alt="QR Code" class="qr-code">
-                </div>
-            </div>
-
-            <!-- PAGE 2: INDOOR MAP & ELEVATION -->
-            <div id="page2" class="page-content">
-                <div class="module-card">
-                    <h3>Spatial Mapping & Elevation</h3>
-                    <p>Select floor level to update active console target.</p>
-                    <div style="display:flex; gap:8px; margin-top:10px;">
-                        <button class="nav-tab active" style="flex:1;" onclick="setFloor(1)">Level 1</button>
-                        <button class="nav-tab" style="flex:1;" onclick="setFloor(2)">Level 2</button>
-                    </div>
-                </div>
-                <div class="location-box" id="floorStatus">
-                    <strong>Active View:</strong> Level 2 Blueprint<br>
-                    <strong>Grid Polygon:</strong> Sector B-East (Classroom 204)
-                </div>
-            </div>
-
-            <!-- PAGE 3: LAW ENFORCEMENT & ADMIN RESPONDER PORTAL -->
-            <div id="page3" class="page-content">
-                <div class="module-card">
-                    <h3>LE / Admin Live Responder Feed</h3>
-                    <p>Simulate tracking specific terminal numbers or incoming dispatch nodes.</p>
-                    <button class="action-btn" onclick="assignNodeNumber('Terminal #104 (LE Command)')">Bind Terminal #104</button>
-                </div>
-                <div class="location-box" id="lePortalStatus">
-                    <strong>Incoming Alarms:</strong> 0 Active<br>
-                    <strong>Network Relay:</strong> Encrypted Sync Active<br>
-                    <strong>CJIS Status:</strong> Exempt (B2B School Infrastructure)
-                </div>
-            </div>
-
-            <!-- PAGE 4: ACTIVE SHOOTER MODULE -->
-            <div id="page4" class="page-content">
-                <div class="module-card">
-                    <h3>Active Shooter Threat Vector</h3>
-                    <p>Isolate campus sector zones and assign threat zones to console.</p>
-                    <button class="action-btn" onclick="assignNodeNumber('Zone Alpha Lockdown (East Wing)')">Assign Zone Alpha</button>
-                    <button class="action-btn" style="background:rgba(255,51,51,0.25); border-color:var(--emergency-red); color:#ff6666; margin-top:6px;" onclick="triggerLockdown()">Initiate Campus Lockdown</button>
-                </div>
-                <div class="location-box" id="lockdownStatus">
-                    <strong>Zone Status:</strong> Normal Operations<br>
-                    <strong>Perimeter Gates:</strong> Closed & Monitored<br>
-                    <strong>Responder Routing:</strong> Standby
-                </div>
-            </div>
-
-            <!-- PAGE 5: SCHOOL BUS TRACKING MODULE -->
-            <div id="page5" class="page-content">
-                <div class="module-card">
-                    <h3>School Bus Fleet Telemetry</h3>
-                    <p>Select specific bus fleet unit numbers to track from console.</p>
-                    <button class="action-btn" onclick="assignNodeNumber('School Bus Unit #14')">Track Bus Unit #14</button>
-                    <button class="action-btn" onclick="assignNodeNumber('School Bus Unit #22')" style="margin-top:6px;">Track Bus Unit #22</button>
-                </div>
-                <div class="location-box">
-                    <strong>Bus Fleet:</strong> Unit #14 (En Route)<br>
-                    <strong>Location:</strong> Route 29 North Corridor<br>
-                    <strong>Next Stop:</strong> Central High Campus (ETA 4 Mins)
-                </div>
-            </div>
-
-            <div class="status-log" id="statusLog">
-                System online. Select modules or numbers to bind assignment to console.
-            </div>
-
-            <div class="disclaimer">
-                <strong>DISCLAIMER:</strong> TACNET SCHOOL is an auxiliary emergency notification and situational awareness tool designed to assist campus staff and first responders. It does not replace primary 911 emergency services, municipal public safety communications infrastructure, or statutory life-safety systems. The platform creator and operators assume no liability for network latency, carrier signal loss, hardware malfunction, or outcomes resulting from emergency deployments.
+    <header class="relative overflow-hidden border-b border-slate-800 bg-slate-900/50 py-20 px-6 lg:px-12">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-red-600/10 text-red-500 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 border border-red-500/20 uppercase tracking-widest">
+                Nationwide School Safety Initiative
+            </span>
+            <h1 class="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+                The Lifesaving Standard Schools <span class="text-red-600">Can't Ignore.</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Every second counts when a threat crosses a school threshold. TACNET unifies administrators, teachers, classrooms, and responding law enforcement into a single, instantaneous defense network.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#pricing" class="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-red-600/30 transition-all text-center">
+                    Request District Pricing
+                </a>
+                <a href="#features" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-xl border border-slate-700 transition-all text-center">
+                    Explore Features
+                </a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- APPLE CLOUDKIT JS LOGIC & DYNAMIC BINDING -->
-    <script>
-        let mediaStream = null;
-        let mediaRecorder = null;
-        let audioChunks = [];
-        let publicDatabase = null;
-        let currentAssignment = "Classroom 204 (Level 2)";
+    <section id="features" class="py-20 px-6 lg:px-12 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Unmatched Capabilities</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">Built hand-in-hand with law enforcement leadership to eliminate communication gaps entirely.</p>
+        </div>
 
-        async function initSystem() {
-            // Initialize Apple CloudKit JS container framework safely
-            try {
-                if (typeof CloudKit !== 'undefined') {
-                    CloudKit.configure({
-                        containers: [{
-                            containerIdentifier: 'iCloud.com.earlwood.tacnetschool',
-                            apiToken: 'YOUR_PUBLIC_CLOUD_KIT_API_TOKEN',
-                            environment: 'development' // Switches to 'production' upon live deployment
-                        }]
-                    });
-                    const container = CloudKit.getDefaultContainer();
-                    publicDatabase = container.publicCloudDatabase;
-                    console.log("Apple CloudKit initialized successfully.");
-                }
-            } catch (e) {
-                console.warn("CloudKit pending credentials configuration:", e);
-            }
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl relative group hover:border-red-600/50 transition-all">
+                <div class="w-12 h-12 bg-red-600/10 rounded-xl flex items-center justify-center text-red-500 font-bold text-xl mb-6 border border-red-500/20">⚡</div>
+                <h3 class="text-xl font-bold text-white mb-3">Instant Multi-Agency Blast</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">One touch simultaneously alerts every teacher, staff member, and responding deputy within fractions of a second.</p>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl relative group hover:border-red-600/50 transition-all">
+                <div class="w-12 h-12 bg-red-600/10 rounded-xl flex items-center justify-center text-red-500 font-bold text-xl mb-6 border border-red-500/20">📢</div>
+                <h3 class="text-xl font-bold text-white mb-3">Automated Intercom Broadcast</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Dynamic threat details stream automatically over school PA loudspeakers so everyone is informed immediately, phone or no phone.</p>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl relative group hover:border-red-600/50 transition-all">
+                <div class="w-12 h-12 bg-red-600/10 rounded-xl flex items-center justify-center text-red-500 font-bold text-xl mb-6 border border-red-500/20">🎯</div>
+                <h3 class="text-xl font-bold text-white mb-3">Visual Room Strobes</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">High-intensity indicators flash red at the precise threat location (e.g., Classroom 204) and turn green upon secure clearance.</p>
+            </div>
+        </div>
+    </section>
 
-            try {
-                mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-                mediaRecorder = new MediaRecorder(mediaStream);
-                
-                mediaRecorder.ondataavailable = (event) => {
-                    if (event.data.size > 0) {
-                        audioChunks.push(event.data);
-                    }
-                };
+    <section id="pricing" class="py-20 px-6 lg:px-12 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">District Licensing Tiers</h2>
+                <p class="text-slate-400">Direct-to-district deployment with zero state bureaucracy red tape.</p>
+            </div>
 
-                mediaRecorder.onstop = () => {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-                    if (publicDatabase) {
-                        saveEmergencyToCloudKit(audioBlob);
-                    }
-                };
-            } catch (err) {
-                console.warn("Microphone access restricted or pending interaction:", err);
-            }
-        }
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Single Campus Tier</h3>
+                        <p class="text-slate-400 text-sm mb-6">Ideal for independent high schools & single campuses.</p>
+                        <div class="text-4xl font-black text-white mb-6">$2,500 <span class="text-sm font-normal text-slate-400">/ year</span></div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center">✓ Full App Access & Panic Button</li>
+                            <li class="flex items-center">✓ Up to 50 Staff User Accounts</li>
+                            <li class="flex items-center">✓ Local Law Enforcement Link</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:your_email@domain.com?subject=Inquiry:%20Single%20Campus%20Tier" class="block bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all">
+                        Get Started
+                    </a>
+                </div>
 
-        function assignNodeNumber(identifier) {
-            currentAssignment = identifier;
-            document.getElementById('consoleActiveAssignment').textContent = currentAssignment;
-            const log = document.getElementById('statusLog');
-            log.style.color = '#ffd700';
-            log.innerHTML = `<strong>NODE ASSIGNED:</strong> Console updated to track <strong>${identifier}</strong>.`;
-        }
+                <div class="bg-slate-900 border-2 border-red-600 rounded-3xl p-8 flex flex-col justify-between relative shadow-xl shadow-red-600/10">
+                    <span class="absolute -top-3 right-6 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Multi-School District</h3>
+                        <p class="text-slate-400 text-sm mb-6">For city or county districts up to 5 campuses.</p>
+                        <div class="text-4xl font-black text-white mb-6">$6,500 <span class="text-sm font-normal text-slate-400">/ year</span></div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center">✓ Unlimited Staff Accounts</li>
+                            <li class="flex items-center">✓ Automated PA Intercom Integration</li>
+                            <li class="flex items-center">✓ Live Bus Tracking Module</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:your_email@domain.com?subject=Inquiry:%20Multi-School%20District" class="block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all">
+                        Request District Proposal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        async function saveEmergencyToCloudKit(audioBlob) {
-            try {
-                const asset = {
-                    file: audioBlob,
-                    fileInfo: {
-                        name: 'emergency_audio.webm',
-                        type: 'audio/webm'
-                    }
-                };
+    <footer class="py-12 px-6 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 TACNET Life-Safety Systems. All Rights Reserved. Designed for Educational & Law Enforcement Protection.</p>
+    </footer>
 
-                const alertRecord = {
-                    recordType: 'EmergencyAlert',
-                    fields: {
-                        nodeName: { value: currentAssignment },
-                        timestamp: { value: new Date().toISOString() },
-                        status: { value: 'ACTIVE_BROADCAST' },
-                        audioAsset: { value: asset }
-                    }
-                };
-
-                const response = await publicDatabase.saveRecords([alertRecord]);
-                console.log("Emergency successfully synced to Apple CloudKit:", response);
-            } catch (error) {
-                console.error("CloudKit sync error:", error);
-            }
-        }
-
-        function switchPage(pageId) {
-            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-            
-            document.getElementById(pageId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        function setFloor(level) {
-            const floorName = level === 2 ? "Classroom 204 (Level 2)" : "Main Hallway (Level 1)";
-            assignNodeNumber(floorName);
-            const fs = document.getElementById('floorStatus');
-            fs.innerHTML = `<strong>Active View:</strong> Level ${level} Blueprint<br><strong>Grid Polygon:</strong> Sector B-${level === 2 ? 'East (Classroom 204)' : 'West (Main Hall)'}`;
-        }
-
-        let holdTimer;
-        let isHolding = false;
-
-        function startHold(e) {
-            e.preventDefault();
-            if (isHolding) return;
-            isHolding = true;
-
-            const log = document.getElementById('statusLog');
-            const btn = document.getElementById('panicBtn');
-            log.style.color = '#ffd700';
-            log.innerHTML = `<strong>HOLDING...</strong> Transmitting alert for <strong>${currentAssignment}</strong>.`;
-            btn.style.boxShadow = "0 0 35px rgba(255, 51, 51, 0.9)";
-
-            audioChunks = [];
-            if (mediaRecorder && mediaRecorder.state === "inactive") {
-                mediaRecorder.start();
-            }
-
-            holdTimer = setTimeout(() => {
-                triggerEmergency();
-            }, 3000);
-        }
-
-        function cancelHold(e) {
-            e.preventDefault();
-            if (!isHolding) return;
-            isHolding = false;
-            clearTimeout(holdTimer);
-
-            if (mediaRecorder && mediaRecorder.state === "recording") {
-                mediaRecorder.stop();
-            }
-
-            const btn = document.getElementById('panicBtn');
-            btn.style.boxShadow = "0 0 25px rgba(255, 51, 51, 0.6)";
-
-            const log = document.getElementById('statusLog');
-            if (log.style.color !== 'rgb(255, 51, 51)') {
-                log.style.color = '#e0f7ff';
-                log.innerHTML = `System online. Current Target: <strong>${currentAssignment}</strong>.`;
-            }
-        }
-
-        function triggerEmergency() {
-            isHolding = false;
-            
-            if (mediaRecorder && mediaRecorder.state === "recording") {
-                mediaRecorder.stop();
-            }
-
-            const log = document.getElementById('statusLog');
-            const btn = document.getElementById('panicBtn');
-            const nodeStatus = document.getElementById('nodeStatusText');
-            
-            btn.style.boxShadow = "0 0 40px rgba(255, 51, 51, 1)";
-            log.style.color = '#ff3333';
-            nodeStatus.style.color = '#ff3333';
-            nodeStatus.textContent = "EMERGENCY BROADCAST ACTIVE";
-            
-            log.innerHTML = `<strong>ALERT TRANSMITTING:</strong> Audio stream packetized for <strong>${currentAssignment}</strong>.`;
-            
-            setTimeout(() => {
-                log.innerHTML = `<strong>BROADCAST SENT:</strong> Apple CloudKit relay updated for <strong>${currentAssignment}</strong>.`;
-            }, 1500);
-        }
-
-        function triggerBypass() {
-            clearTimeout(holdTimer);
-            isHolding = false;
-            
-            if (mediaRecorder && mediaRecorder.state === "recording") {
-                mediaRecorder.stop();
-            }
-
-            const log = document.getElementById('statusLog');
-            const nodeStatus = document.getElementById('nodeStatusText');
-            
-            log.style.color = '#34d399';
-            nodeStatus.style.color = '#34d399';
-            nodeStatus.textContent = "Secure / Standby";
-            log.innerHTML = `<strong>STATUS VERIFIED:</strong> ${currentAssignment} confirmed secure.`;
-        }
-
-        function simulateIncomingAlert() {
-            const portal = document.getElementById('lePortalStatus');
-            portal.innerHTML = `
-                <strong style="color:#ff3333;">INCOMING ALERT ACTIVE:</strong><br>
-                <strong>Target:</strong> ${currentAssignment}<br>
-                <strong>Type:</strong> Emergency Broadcast Triggered<br>
-                <strong>Timestamp:</strong> Just Now
-            `;
-        }
-
-        function triggerLockdown() {
-            const lockdownBox = document.getElementById('lockdownStatus');
-            lockdownBox.innerHTML = `
-                <strong style="color:#ff3333;">CAMPUS LOCKDOWN ENGAGED:</strong><br>
-                <strong>Target:</strong> ${currentAssignment}<br>
-                <strong>Command Sent:</strong> Strobe & Audio Alarms Activated
-            `;
-            const log = document.getElementById('statusLog');
-            log.style.color = '#ff3333';
-            log.innerHTML = `<strong>LOCKDOWN:</strong> Campus security protocol initiated for ${currentAssignment}.`;
-        }
-    </script>
 </body>
 </html>
