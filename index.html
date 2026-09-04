@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TACNET SCHOOL</title>
-    <!-- Tailwind CSS for modern blue glassy design -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .glass-panel {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #0f172a;
         }
         .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.95)), 
-                              url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=2000&q=80');
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(30, 58, 138, 0.85)), 
+                              url('13.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -30,173 +30,160 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- HERO SECTION WITH BLUE GLASSY THEME -->
-    <header class="relative overflow-hidden border-b border-blue-900/40 hero-bg py-24 px-6 lg:px-12">
+    <header class="relative overflow-hidden border-b border-blue-300 hero-bg py-24 px-6 lg:px-12 text-white">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <span class="inline-block bg-blue-600/20 text-blue-400 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 border border-blue-500/30 uppercase tracking-widest shadow-lg shadow-blue-600/20">
+            <span class="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-full text-sm mb-6 border border-blue-400 uppercase tracking-widest shadow-lg shadow-blue-600/30">
                 Created by Retired Deputy Sheriff Earl Wood • Extensive Public Safety Experience
             </span>
-            <h1 class="text-4xl lg:text-6xl font-black tracking-tight text-white mb-4 leading-tight">
+            <h1 class="text-4xl lg:text-6xl font-black tracking-tight mb-4 leading-tight drop-shadow-md">
                 TACNET SCHOOL
             </h1>
-            <p class="text-xl font-bold text-blue-400 uppercase tracking-wide mb-6">
+            <p class="text-xl font-bold text-blue-200 uppercase tracking-wide mb-6 drop-shadow">
                 Connecting Schools. Protecting Students. Saving Lives.
             </p>
-            <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-semibold text-red-400">
+            <p class="text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-black text-red-300 drop-shadow">
                 NO SCHOOL SHOULD EVER BE WITHOUT TACNET SCHOOL.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#pricing" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/30 transition-all text-center border border-blue-400/30">
+                <a href="#pricing" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-blue-600/30 transition-all text-center border border-blue-400">
                     View Per-School Pricing
                 </a>
-                <a href="#live-sequence" class="glass-panel hover:bg-slate-800/80 text-slate-200 font-semibold px-8 py-4 rounded-xl transition-all text-center">
-                    View Sequence of Events
+                <a href="#visual-story" class="bg-white/90 hover:bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl transition-all text-center shadow-lg">
+                    View Complete Visual Evidence
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- BACKDROP VISUAL GRID SECTION -->
-    <section class="py-16 px-6 lg:px-12 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-2">Integrated Public Safety Ecosystem</h2>
-            <p class="text-slate-400 text-sm">Engineered specifically for schools, campus transport, and first-responder alignment.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- School Photo -->
-            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl group border border-blue-500/20">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" alt="High School Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-blue-950/30"></div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-bold text-lg text-white mb-1">Campus Protection</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">Instant room-level location alerts, door indicator strobes, and automated PA loudspeaker broadcasts.</p>
-                </div>
+    <section class="py-12 px-6 lg:px-12 max-w-6xl mx-auto">
+        <div class="bg-white/90 border border-blue-200 rounded-3xl p-6 shadow-2xl">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">The TACNET School Community Standard</h2>
+                <p class="text-slate-600 text-sm">Unified protection backed by local law enforcement, school boards, and families.</p>
             </div>
-            <!-- School Bus Photo -->
-            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl group border border-blue-500/20">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1557223562-6c77ef1ae210?auto=format&fit=crop&w=800&q=80" alt="School Bus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-blue-950/30"></div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-bold text-lg text-white mb-1">Fleet & Bus Tracking</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">Real-time GPS telemetry and route monitoring integrated directly into the command dashboard.</p>
-                </div>
-            </div>
-            <!-- LE Vehicle Photo -->
-            <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl group border border-blue-500/20">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Law Enforcement Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-blue-950/30"></div>
-                </div>
-                <div class="p-6">
-                    <h3 class="font-bold text-lg text-white mb-1">First Responder Link</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">Direct tactical data feed to responding deputies while en route, eliminating blind deployment.</p>
-                </div>
+            <div class="rounded-2xl overflow-hidden border border-blue-300 shadow-xl">
+                <img src="13.jpg" alt="TACNET School Community and Law Enforcement Partnership" class="w-full h-auto object-cover">
             </div>
         </div>
     </section>
 
-    <!-- DETAILED CLOSE-UP SEQUENCE IN EXACT ORDER -->
-    <section id="live-sequence" class="py-16 px-6 lg:px-12 max-w-6xl mx-auto border-t border-blue-900/30">
+    <section id="visual-story" class="py-16 px-6 lg:px-12 max-w-6xl mx-auto border-t border-blue-200">
         <div class="text-center mb-16">
-            <span class="text-blue-400 font-semibold text-sm uppercase tracking-widest block mb-2">Step-by-Step Operation</span>
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Real-Time Threat Response Sequence</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Follow the exact sequence of events from initial bus alert to final resolution.</p>
+            <span class="text-blue-600 font-bold text-sm uppercase tracking-widest block mb-2">Step-by-Step Live Proof</span>
+            <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mb-4">Real-Time Threat Response Visual Sequence</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Every critical phase of the TACNET ecosystem captured with exact visual evidence.</p>
         </div>
 
-        <div class="space-y-12">
-            <!-- STEP 1: Bus Driver presses RED EMERGENCY ALERT -->
-            <div class="glass-panel p-8 rounded-3xl border border-blue-500/40 relative shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+        <div class="space-y-16">
+            <div class="bg-white/90 border border-blue-200 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Step 1 (1:00 - 1:10)</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Bus Driver Alert Trigger</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        The bus driver presses the <strong>RED EMERGENCY ALERT</strong> button on the mobile device, instantly connecting to the school network.
+                    <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Overview / Community Proof</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Community & Fleet Success</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        Demonstrating complete community alignment, secured buses, and local law enforcement solidarity standing shoulder-to-shoulder with students and teachers.
                     </p>
                 </div>
-                <div class="bg-slate-950 border border-blue-500/30 rounded-2xl overflow-hidden shadow-xl">
+                <div class="bg-slate-100 border border-blue-300 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="788628695_1760137611690277_1542633745153688656_n (1).jpg" alt="Community and Bus Success" class="w-full h-auto object-cover">
+                </div>
+            </div>
+
+            <div class="bg-white/90 border border-blue-200 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Step 1 (1:00 - 1:10)</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Bus Driver Alert Trigger</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        The bus driver presses the <strong>RED EMERGENCY ALERT</strong> button on the mobile device, instantly connected to the school.
+                    </p>
+                </div>
+                <div class="bg-slate-100 border border-blue-300 rounded-2xl overflow-hidden shadow-xl">
                     <img src="7.jpg" alt="Bus driver pressing red emergency alert" class="w-full h-auto object-cover">
                 </div>
             </div>
 
-            <!-- STEP 2: School contacts 911 with description and direction of travel -->
-            <div class="glass-panel p-8 rounded-3xl border border-blue-500/40 relative shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+            <div class="bg-white/90 border border-blue-200 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-8 items-center">
                 <div>
                     <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Step 2 (1:20 - 1:30)</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">911 Dispatch & GPS Tracking</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">911 Dispatch & GPS Tracking</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">
                         The school immediately contacts 911 with description and direction of travel. Live GPS tracks Bus 12 near Oak Ridge Rd with active red alert flashing on dispatch terminals.
                     </p>
                 </div>
-                <div class="bg-slate-950 border border-blue-500/30 rounded-2xl overflow-hidden shadow-xl">
+                <div class="bg-slate-100 border border-blue-300 rounded-2xl overflow-hidden shadow-xl">
                     <img src="9.jpg" alt="911 Dispatch monitor showing bus GPS route" class="w-full h-auto object-cover">
                 </div>
             </div>
 
-            <!-- STEP 3: The Resolution -->
-            <div class="glass-panel p-8 rounded-3xl border border-blue-500/40 relative shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+            <div class="bg-white/90 border border-blue-200 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <div class="inline-block bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Step 3 (Resolution)</div>
-                    <h3 class="text-2xl font-bold text-white mb-3">The Resolution</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Step 3 (Command View)</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Command Center Vector Mapping</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        Administrators and safety coordinators monitor live threat vector coordinates and real-time polygon grids instantly upon alarm activation.
+                    </p>
+                </div>
+                <div class="bg-slate-100 border border-blue-300 rounded-2xl overflow-hidden shadow-xl">
+                    <img src="mt4tc4b9nd9f1z.jpeg" alt="Command Center Mapping View" class="w-full h-auto object-cover">
+                </div>
+            </div>
+
+            <div class="bg-white/90 border border-blue-200 p-8 rounded-3xl shadow-2xl grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="inline-block bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Step 4 (Resolution)</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">The Resolution</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
                         The event is over. A record-time stoppage driven by instant communication and decisive law enforcement action.
                     </p>
-                    <ul class="space-y-2 text-sm text-slate-300">
+                    <ul class="space-y-2 text-sm text-slate-700">
                         <li class="flex items-center gap-2">✅ Threat neutralized before escalating.</li>
                         <li class="flex items-center gap-2">✅ Clear, orderly post-event assessment based on Yellow/Green room data.</li>
                         <li class="flex items-center gap-2">✅ Students and parents safely reunited.</li>
                     </ul>
                 </div>
-                <div class="bg-slate-950 border border-blue-500/30 rounded-2xl overflow-hidden shadow-xl">
+                <div class="bg-slate-100 border border-blue-300 rounded-2xl overflow-hidden shadow-xl">
                     <img src="3.jpg" alt="The Resolution - Successful outcome" class="w-full h-auto object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="py-20 px-6 lg:px-12 bg-slate-900/50 border-t border-blue-900/30">
+    <section id="pricing" class="py-20 px-6 lg:px-12 bg-white/70 border-t border-blue-200">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-blue-400 font-semibold text-sm uppercase tracking-widest block mb-2">Transparent Licensing</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Per-School Investment Pricing</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Priced individually per school campus so districts of any size can deploy immediately with zero state bureaucracy red tape.</p>
+                <span class="text-blue-600 font-bold text-sm uppercase tracking-widest block mb-2">Transparent Licensing</span>
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mb-4">Per-School Investment Pricing</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Priced individually per school campus so districts of any size can deploy immediately with zero state bureaucracy red tape.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Single School License -->
-                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-blue-500/30">
+                <div class="bg-white border border-blue-300 rounded-3xl p-8 flex flex-col justify-between shadow-xl">
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Single School Campus License</h3>
-                        <p class="text-slate-400 text-sm mb-6">Complete life-safety deployment for one individual school facility.</p>
-                        <div class="text-4xl font-black text-white mb-6">$2,500 <span class="text-sm font-normal text-slate-400">/ school / year</span></div>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center text-blue-400 font-medium">✓ Per-School Flat Rate Structure</li>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Single School Campus License</h3>
+                        <p class="text-slate-600 text-sm mb-6">Complete life-safety deployment for one individual school facility.</p>
+                        <div class="text-4xl font-black text-slate-900 mb-6">$2,500 <span class="text-sm font-normal text-slate-500">/ school / year</span></div>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center text-blue-600 font-bold">✓ Per-School Flat Rate Structure</li>
                             <li class="flex items-center">✓ Full App Access & Emergency Panic Button</li>
                             <li class="flex items-center">✓ Up to 50 Staff User Accounts per Campus</li>
                             <li class="flex items-center">✓ Local Law Enforcement Portal Linkage</li>
                         </ul>
                     </div>
-                    <a href="mailto:earl@tacnetsolutions.com?subject=Inquiry:%20Single%20School%20License" class="block bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all border border-blue-500/30">
+                    <a href="mailto:earl@tacnetsolutions.com?subject=Inquiry:%20Single%20School%20License" class="block bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl text-center transition-all border border-blue-400 shadow-md">
                         Request Single School Setup
                     </a>
                 </div>
 
-                <!-- Multi-School / District Package -->
-                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border-2 border-blue-600 shadow-xl shadow-blue-600/20 relative">
-                    <span class="absolute -top-3 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">District Standard</span>
+                <div class="bg-white border-2 border-blue-600 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative">
+                    <span class="absolute -top-3 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">District Standard</span>
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Multi-School District Package</h3>
-                        <p class="text-slate-400 text-sm mb-6">Scaled pricing for county or city districts covering multiple campuses.</p>
-                        <div class="text-4xl font-black text-white mb-6">$6,500 <span class="text-sm font-normal text-slate-400">/ year</span></div>
-                        <p class="text-xs text-blue-400 font-semibold mb-6">Covers up to 10 School Campuses in your district ($650 per school/year effectively).</p>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li class="flex items-center text-blue-400 font-medium">✓ Up to 10 School Campuses Included</li>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Multi-School District Package</h3>
+                        <p class="text-slate-600 text-sm mb-6">Scaled pricing for county or city districts covering multiple campuses.</p>
+                        <div class="text-4xl font-black text-slate-900 mb-6">$6,500 <span class="text-sm font-normal text-slate-500">/ year</span></div>
+                        <p class="text-xs text-blue-600 font-bold mb-6">Covers up to 10 School Campuses in your district ($650 per school/year effectively).</p>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center text-blue-600 font-bold">✓ Up to 10 School Campuses Included</li>
                             <li class="flex items-center">✓ Unlimited District Staff Accounts</li>
                             <li class="flex items-center">✓ Automated PA Intercom Integration</li>
                             <li class="flex items-center">✓ Live Bus Tracking & Fleet Module</li>
@@ -210,8 +197,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-12 px-6 border-t border-blue-900/30 text-center text-slate-500 text-sm">
+    <footer class="py-12 px-6 border-t border-blue-200 text-center text-slate-600 text-sm bg-white/80">
         <p>&copy; 2026 TACNET School Systems. Created by Retired Deputy Sheriff Earl Wood. All Rights Reserved.</p>
     </footer>
 
